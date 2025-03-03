@@ -11,7 +11,7 @@
 
 <!-- PROJECT LOGO -->
 <br />
-<a href="https://github.com/shaojintian/Best_README_template/">
+<a href="https://github.com/Nanoic39/mindlift/tree/main">
     <img src="image/mindlift_logo.png" alt="Logo">
   </a>
 
