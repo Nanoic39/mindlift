@@ -1,0 +1,61 @@
+server:
+  port: 14514
+spring:
+  application:
+    name: Mind-Lift-V3
+  data:
+    redis:
+      host: 127.0.0.1
+      port: 6379
+      database: 0
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    # 服务器
+    url: jdbc:mysql://120.55.85.167:3307/mindlift?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: mysq1P@s5w0rd
+    # 本地
+    # url: jdbc:mysql://localhost:3306/mindlift?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
+    # username: nano1c
+    # password: password
+  servlet:
+    multipart:
+      max-file-size: 5GB
+      max-request-size: 5GB
+mybatis:
+  configuration:
+    map-underscore-to-camel-case: false # 关闭下划线转驼峰
+
+# Vosk语音识别配置
+vosk:
+  model:
+    # 外部模型路径
+    path: /home/mindlift/vosk-models/vosk-model-small-cn-0.22 
+    # 内部模型路径（开发环境使用，相对于resources目录）
+    internal:
+      path: vosk/vosk-model-small-cn-0.22
+    # 默认采样率
+    sample:
+      rate: 16000
+  # 日志级别: DEBUG, INFO, WARNINGS
+  log:
+    level: WARNINGS
+
+custom:
+  token:
+    token-expire-time: 1296000
+  url:
+    # base-file-url: D:\Dev\Program\mindlift3\file # 本地文件访问基础地址
+    base-file-url: /home/mindlift/jar/file # 服务器文件访问基础地址
+    star-api: https://agentapi.baidu.com/assistant/getAnswer
+    bert-api: http://127.0.0.1:8000
+    res-api: http://127.0.0.1:8081/predict
+  key:
+    star-app-id: {{小星智能体appid}}
+    star-secret-key: {{小星智能体key}}
+    star-from: openapi
+    star-access-token: {{小星智能体token}}
+    ALIBABA_CLOUD_ACCESS_KEY_ID: {{阿里云密钥id}}
+    ALIBABA_CLOUD_ACCESS_KEY_SECRET: {{阿里云密钥密钥}}
+
+
